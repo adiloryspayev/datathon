@@ -75,6 +75,11 @@ This visualization illustrates the distribution of sewer backups by month, helpi
 
 ![Monthly Sewer Backup Distribution](mostbackups.png)
 
+### Model Performance Metrics
+This visualization evaluates the accuracy and variance of the model based on service request types.
+
+![Model Performance Metrics](modelmetrics.png)
+
 ### Model Predictions on Areas Needing Attention
 The visualization below highlights the areas predicted to need the most attention, based on the model's analysis.
 

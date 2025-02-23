@@ -86,3 +86,8 @@ The visualization below highlights the areas predicted to need the most attentio
 
 ![Predicted Areas Needing Attention](attention.png)
 
+### Illegal Parking Heatmap
+The heatmap below visualizes areas with high reports of illegal parking incidents, using Folium for an interactive experience.
+
+![Illegal Parking Heatmap](illegal_parking_heatmap.html)
+

@@ -34,6 +34,7 @@ The project utilizes three main datasets:
 - Service Type Prediction Accuracy: ~85%
 - Response Time Category Prediction Accuracy: ~78%
 - Strong performance in identifying high-priority service areas
+- The model predicts, based on a user-provided address, when and what type of service a property will require.
 
 ## Technical Architecture
 
@@ -84,3 +85,4 @@ The plot below illustrates the decrease in loss over epochs, indicating the mode
 The visualization below highlights the areas predicted to need the most attention, based on the model's analysis.
 
 ![Predicted Areas Needing Attention](attention.png)
+

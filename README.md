@@ -80,3 +80,7 @@ The plot below illustrates the decrease in loss over epochs, indicating the mode
 
 ![Model Loss over Epochs](modelmetrics.png)
 
+### Model Predictions on Areas Needing Attention
+The visualization below highlights the areas predicted to need the most attention, based on the model's analysis.
+
+![Predicted Areas Needing Attention](attention.png)

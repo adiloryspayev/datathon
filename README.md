@@ -30,12 +30,6 @@ The project utilizes three main datasets:
 - Geographic location influences service delivery speed
 - Seasonal variations in service request volumes and response times
 
-### Model Performance
-- Service Type Prediction Accuracy: ~85%
-- Response Time Category Prediction Accuracy: ~78%
-- Strong performance in identifying high-priority service areas
-- The model predicts, based on a user-provided address, when and what type of service a property will require.
-
 ## Technical Architecture
 
 ### Data Processing Pipeline
@@ -74,12 +68,7 @@ The heatmap visualization below highlights sewer backup hotspots, helping to ide
 ### Most Frequent Backup Locations
 The following visualization shows the most frequently reported locations for sewer backups, aiding in prioritizing infrastructure improvements.
 
-![Most Frequent Backup Locations](mostbackups.png)
-
-### Model Training Performance
-The plot below illustrates the decrease in loss over epochs, indicating the model's learning progress.
-
-![Model Loss over Epochs](modelmetrics.png)
+![Most Frequent Backup Locations](sewagelocs.png)
 
 ### Model Predictions on Areas Needing Attention
 The visualization below highlights the areas predicted to need the most attention, based on the model's analysis.
@@ -90,23 +79,4 @@ The visualization below highlights the areas predicted to need the most attentio
 The heatmap below visualizes areas with high reports of illegal parking incidents, using Folium for an interactive experience. Most frequent violations locally near our campus occur on Marshall St.
 
 ![Parking Violation Heatmap](parking.png)
-
-### Model Evaluation Visualizations
-To better interpret the model's accuracy, the following charts provide deeper insights:
-
-#### Confusion Matrices
-These matrices illustrate the model's prediction errors for both service type and response time categories.
-
-![Service Type Confusion Matrix](confusion_service.png)
-![Response Time Confusion Matrix](confusion_time.png)
-
-#### Classification Metrics
-A heatmap of precision, recall, and F1 scores provides insights into per-class performance.
-
-![Precision-Recall-F1 Heatmap](classification_report.png)
-
-#### Accuracy by Class
-A bar chart showing the accuracy of predictions across different service types.
-
-![Per-Class Accuracy](accuracy_chart.png)
 

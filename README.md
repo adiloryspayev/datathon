@@ -19,19 +19,18 @@ The project utilizes three main datasets:
 ## Key Findings
 
 ### Sewer Backup Analysis
-Our analysis revealed several hotspots for sewer backup issues:
 - Generated heatmap visualization showing concentration of incidents
 - Identified seasonal patterns in service requests
 - Top 10 locations account for approximately 30% of all backup reports
 
+![Sewer Backup Heatmap](heatmap.png)
+
 ### Service Response Time Patterns
-The multi-task model revealed:
 - Average response times vary significantly by service type
 - Geographic location influences service delivery speed
 - Seasonal variations in service request volumes and response times
 
 ### Model Performance
-Our multi-task neural network achieved:
 - Service Type Prediction Accuracy: ~85%
 - Response Time Category Prediction Accuracy: ~78%
 - Strong performance in identifying high-priority service areas
@@ -44,11 +43,11 @@ def merge_and_preprocess_data(df1, df3):
     # Clean coordinates
     df1 = df1.dropna(subset=['Lat', 'Lng'])
     df3 = df3.dropna(subset=['Lat', 'Lng'])
-    
+
     # Build KDTree for spatial joining
     tree = cKDTree(df1[['Lat', 'Lng']].values)
     distances, indices = tree.query(df3[['Lat', 'Lng']].values, k=1)
-    
+
     # Merge datasets
     df_combined = df3.join(df1.iloc[indices], rsuffix='_df1')
 ```
@@ -67,67 +66,12 @@ class MultiTaskServiceTimeModel(nn.Module):
 ## Visualizations
 
 ### Sewer Backup Heatmap
-The heatmap visualization reveals concentrated areas of sewer backup issues:
-```python
-# Create Folium Map
-m = folium.Map(location=[43.0481, -76.1474], zoom_start=12)
-HeatMap(locations, radius=15, blur=10, min_opacity=0.5).add_to(m)
-```
+The heatmap visualization below highlights sewer backup hotspots, helping to identify areas with high incident concentrations.
 
-### Service Prediction Distribution
-```python
-def visualize_predictions(X_test_df, y_pred_test):
-    plt.scatter(X_test_df[y_pred_test == 1]['LONG'],
-                X_test_df[y_pred_test == 1]['LAT'],
-                color='red', label='High Priority')
-    plt.scatter(X_test_df[y_pred_test == 0]['LONG'],
-                X_test_df[y_pred_test == 0]['LAT'],
-                color='green', label='Normal Priority')
-```
+![Sewer Backup Heatmap](heatmap.png)
 
-## Installation and Usage
+### Most Frequent Backup Locations
+The following visualization shows the most frequently reported locations for sewer backups, aiding in prioritizing infrastructure improvements.
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/city-services-prediction.git
-```
+![Most Frequent Backup Locations](mostbackups.png)
 
-2. Install required packages:
-```bash
-pip install -r requirements.txt
-```
-
-3. Run the main analysis:
-```bash
-python main.py
-```
-
-4. For predictions:
-```python
-from predictor import predict_service_and_time
-address = "123 Example St, Syracuse, NY"
-predict_service_and_time(address, model, scaler, imputer, le_service)
-```
-
-## Requirements
-- Python 3.8+
-- PyTorch
-- Pandas
-- NumPy
-- Scikit-learn
-- Folium
-- Matplotlib
-- Geopy
-
-## Future Improvements
-1. Integration with real-time service request data
-2. Enhanced visualization dashboard
-3. Mobile application for field workers
-4. Automated alert system for high-priority areas
-5. Integration with city's infrastructure maintenance schedule
-
-## Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.

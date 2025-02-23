@@ -75,3 +75,8 @@ The following visualization shows the most frequently reported locations for sew
 
 ![Most Frequent Backup Locations](mostbackups.png)
 
+### Model Training Performance
+The plot below illustrates the decrease in loss over epochs, indicating the model's learning progress.
+
+![Model Loss over Epochs](modelmetrics.png)
+

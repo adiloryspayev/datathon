@@ -70,6 +70,11 @@ The following visualization shows the most frequently reported locations for sew
 
 ![Most Frequent Backup Locations](sewagelocs.png)
 
+### Monthly Distribution of Sewer Backups
+This visualization illustrates the distribution of sewer backups by month, helping to identify seasonal trends and peak periods of incidents.
+
+![Monthly Sewer Backup Distribution](mostbackups.png)
+
 ### Model Predictions on Areas Needing Attention
 The visualization below highlights the areas predicted to need the most attention, based on the model's analysis.
 

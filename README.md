@@ -87,7 +87,26 @@ The visualization below highlights the areas predicted to need the most attentio
 ![Predicted Areas Needing Attention](attention.png)
 
 ### Illegal Parking Heatmap
-The heatmap below visualizes areas with high reports of illegal parking incidents, using Folium for an interactive experience.
+The heatmap below visualizes areas with high reports of illegal parking incidents, using Folium for an interactive experience. Most frequent violations locally near our campus occur on Marshall St.
 
-![Illegal Parking Heatmap](illegal_parking_heatmap.html)
+![Parking Violation Heatmap](parking.png)
+
+### Model Evaluation Visualizations
+To better interpret the model's accuracy, the following charts provide deeper insights:
+
+#### Confusion Matrices
+These matrices illustrate the model's prediction errors for both service type and response time categories.
+
+![Service Type Confusion Matrix](confusion_service.png)
+![Response Time Confusion Matrix](confusion_time.png)
+
+#### Classification Metrics
+A heatmap of precision, recall, and F1 scores provides insights into per-class performance.
+
+![Precision-Recall-F1 Heatmap](classification_report.png)
+
+#### Accuracy by Class
+A bar chart showing the accuracy of predictions across different service types.
+
+![Per-Class Accuracy](accuracy_chart.png)
 
